@@ -5,3 +5,5 @@ class HomeController < ApplicationController
     render
   end
 end
+
+# Restarting the rails and wwebpacker server solved the issue
