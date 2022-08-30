@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+
 import { setAuthHeaders } from "apis/axios";
 import { initializeLogger } from "common/logger";
 // previous code if any
