@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Task < ApplicationRecord
+  belongs_to :assigned_user, foreign_key: "assigned_user_id", class_name: "User"
   MAX_TITLE_LENGTH = 50
   # before_save :change_title
   after_save :change_title
