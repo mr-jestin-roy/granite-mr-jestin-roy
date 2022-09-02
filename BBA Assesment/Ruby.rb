@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 def intersection(arr1, arr2)
-  common_elements = arr1.select { |item| arr2.include?(item) }
+  # Method 1
+  # common_elements = arr1.select { |item| arr2.include?(item) }
+  # Method 2
+  common_elements = arr1 & arr2
   common_elements.map! { |item| item.to_i }
   common_elements
 end
