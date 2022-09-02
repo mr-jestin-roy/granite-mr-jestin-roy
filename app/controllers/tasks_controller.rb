@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :load_task!, only: %i[show update destroy]
   def index
     tasks = Task.all.as_json(include: { assigned_user: { only: %i[name id] } })
-    respond_with_json(tasks)
+    respond_with_json({ tasks: tasks })
   end
 
   def create
