@@ -126,4 +126,4 @@ dump.rdb
 yarn-debug.log*
 .yarn-integrity
 
-package-lock.json
+package-lock.jsoncoverage
