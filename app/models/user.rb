@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i.freeze
+  VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   MAX_EMAIL_LENGTH = 255
 
   has_many :assigned_tasks, foreign_key: :assigned_user_id, class_name: "Task"
   has_secure_password
+  has_secure_token :authentication_token
 
   validates :name, presence: true, length: { maximum: 35 }
   validates :email, presence: true,
