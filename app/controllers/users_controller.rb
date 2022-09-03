@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     user.save!
-    respond_with_success(t("successfully_created", entity: "User"))
+    rrespond_with_success(t("successfully_created", entity: "User"))
   end
 
   private
