@@ -2,10 +2,10 @@
 
 Rails.application.routes.draw do
   constraints(lambda { |req| req.format == :json }) do
-    resources :tasks, except: %i[new edit], param: :slug
-    resources :users, only: %i[create index]
-    resource :session, only: :create
-  end
+   resources :tasks, except: %i[new edit], param: :slug
+   resources :users, only: %i[create index]
+   resource :session, only: [:create, :destroy]
+ end
 
   root "home#index"
   get "*path", to: "home#index", via: :all
