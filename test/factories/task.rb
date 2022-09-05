@@ -6,5 +6,6 @@ FactoryBot.define do
     association :task_owner, factory: :user
     title { Faker::Lorem.sentence[0..49] }
     progress { "pending" }
+    status { "unstarred" }
   end
 end
