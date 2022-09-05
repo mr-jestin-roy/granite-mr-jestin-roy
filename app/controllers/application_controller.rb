@@ -7,8 +7,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotUnique, with: :handle_record_not_unique
   rescue_from ActionController::ParameterMissing, with: :handle_api_error
   rescue_from Pundit::NotAuthorizedError, with: :handle_authorization_error
-
-  include Pundit
+  include Pundit::Authorization
 
   private
 
