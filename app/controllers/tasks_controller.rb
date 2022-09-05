@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   def index
     tasks = policy_scope(Task)
     tasks_with_assigned_user = tasks.as_json(include: { assigned_user: { only: %i[name id] } })
-    respond_with_json(tasks_with_assigned_user)
+    respond_with_json({ tasks: tasks_with_assigned_user })
   end
 
   def create
