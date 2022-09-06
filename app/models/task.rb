@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Task < ApplicationRecord
+  after_create :log_task_details
   MAX_TITLE_LENGTH = 125
   RESTRICTED_ATTRIBUTES = %i[title task_owner_id assigned_user_id]
 
@@ -9,7 +10,7 @@ class Task < ApplicationRecord
 
   belongs_to :task_owner, foreign_key: "task_owner_id", class_name: "User"
   belongs_to :assigned_user, foreign_key: "assigned_user_id", class_name: "User"
-
+  after_create :log_task_details
   validates :title, presence: true, length: { maximum: MAX_TITLE_LENGTH }
   validates :slug, uniqueness: true
   validate :slug_not_changed
@@ -51,5 +52,9 @@ class Task < ApplicationRecord
         unstarred = completed.unstarred.order("updated_at DESC")
       end
       starred + unstarred
+    end
+
+    def log_task_details
+      TaskLoggerJob.perform_later(self)
     end
 end
