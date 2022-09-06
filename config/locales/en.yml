@@ -7,7 +7,15 @@ en:
   successfully_created: "%{entity} was successfully created!"
   successfully_updated: "%{entity} was successfully updated!"
   successfully_deleted: "%{entity} was successfully deleted!"
+  not_found: "%{entity} not found."
   task:
     slug:
       immutable: "is immutable!"
-    not_found: "Couldn't find Task"
+  preference:
+    notification_delivery_hour:
+      range: "value should be between 0 and 23"
+    mail:
+      notification_status: "Email notifications %{status}."
+  date:
+    invalid: "must be a valid date"
+    cant_be_in_past: "can't be in the past"

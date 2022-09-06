@@ -70,3 +70,9 @@ end
 gem "pundit"
 
 gem "sidekiq"
+
+# For periodic sidekiq jobs
+gem "sidekiq-cron"
+
+# For opening mails in development env
+gem "letter_opener", group: :development
