@@ -12,7 +12,7 @@ class PreferencesControllerTest < ActionDispatch::IntegrationTest
   def test_show_preference_for_a_valid_user
     get preference_path, headers: @headers
     assert_response :ok
-    assert_equal response.parsed_body["id"], @preference.id
+    assert_equal response.parsed_body["id"], { preference: @preference.id }
   end
 
   def test_not_found_error_rendered_if_preference_is_not_present
