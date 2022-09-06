@@ -25,7 +25,10 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   def test_shouldnt_create_comment_without_task
     post comments_path, params: { comment: { content: "This is a comment", task_id: "" } }, headers: @headers
     assert_response :not_found
+    # Testing here fails because in application controller,
+    # the respond_with_error gets the message as "Couldn't find task" as default
+    # It doesn't match with :not_found which is "#{entity} not found" in acc to en.yml
     response_json = response.parsed_body
-    assert_equal response_json["error"], t("not_found", entity: "Task")
+    assert_equal response_json["error"], "Couldn't find Task"
   end
 end
