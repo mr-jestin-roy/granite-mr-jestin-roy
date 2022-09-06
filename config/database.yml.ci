@@ -14,6 +14,8 @@ test:
   <<: *default
   database: granite_test<%= ENV['CIRCLE_NODE_INDEX'] %>
 
+# circle Ci build issue resolved !!
+
 production:
   <<: *default
   database: db/production.sqlite3
