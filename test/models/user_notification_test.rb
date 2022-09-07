@@ -25,5 +25,5 @@ class UserNotificationTest < ActiveSupport::TestCase
     @user_notification.last_notification_sent_date = Time.zone.yesterday
     assert @user_notification.invalid?
     assert_includes @user_notification.errors.messages[:last_notification_sent_date], t("date.cant_be_in_past")
-end
+  end
 end

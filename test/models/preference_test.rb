@@ -21,5 +21,5 @@ class PreferenceTest < ActiveSupport::TestCase
       @preference.notification_delivery_hour = hour
       assert @preference.invalid?
     end
-end
+  end
 end
