@@ -38,12 +38,12 @@
     "remixicon": "^2.5.0",
     "tailwindcss": "1.9.6",
     "webpack": "^4.46.0",
+    "babel-plugin-js-logger": "^1.0.17",
     "webpack-cli": "^3.3.12"
   },
   "version": "0.1.0",
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
-    "babel-plugin-js-logger": "^1.0.17",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
