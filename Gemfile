@@ -80,3 +80,7 @@ gem "letter_opener", group: :development
 gem "sqlite3", "~> 1.4", group: [:development, :test]
 
 gem "pg", group: [:production]
+# PDF generation gem
+gem "wicked_pdf"
+# wicked_pdf uses the following binary
+gem "wkhtmltopdf-binary"

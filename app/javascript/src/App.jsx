@@ -12,6 +12,7 @@ import Dashboard from "components/Dashboard";
 import MyPreferences from "components/MyPreferences";
 import PageLoader from "components/PageLoader";
 import { CreateTask, ShowTask, EditTask } from "components/Tasks";
+import DownloadReport from "components/Tasks/DownloadReport";
 import { getFromLocalStorage } from "utils/storage";
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
         <Route exact component={ShowTask} path="/tasks/:slug/show" />
         <Route exact component={EditTask} path="/tasks/:slug/edit" />
         <Route exact component={CreateTask} path="/tasks/create" />
+        <Route exact component={DownloadReport} path="/tasks/report" />;
         <Route exact component={Signup} path="/signup" />
         <Route exact component={Login} path="/login" />
         <Route exact component={MyPreferences} path="/my/preferences" />
