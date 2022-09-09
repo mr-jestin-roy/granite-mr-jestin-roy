@@ -17,6 +17,7 @@ class Task < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   before_create :set_slug
+  after_commit :log_task_details, on: :create
 
   private
 
